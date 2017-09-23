@@ -1,0 +1,23 @@
+.create {
+  padding: 15px;
+  border: 1px solid black;
+  width: 280px;
+  text-align: center;
+  margin:15px auto;
+}
+
+input {
+  width: 200px;
+}
+
+table {
+  margin: auto;
+}
+
+.listing {
+  padding: 15px;
+  border: 1px solid black;
+  width: 300px;
+  text-align: center;
+  margin:10px auto;
+}

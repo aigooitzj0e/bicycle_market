@@ -1,0 +1,13 @@
+<div class='container'>
+  <h3>Browse</h3>
+
+  <div *ngFor="let bike of allBikes" class="browse">
+    <img src="{{ bike.image }}" height="250px">
+    <p>Title: {{ bike.title }}</p>
+    <p>Price: ${{ bike.price }}</p>
+    <p>Location: {{ bike.location }}</p>
+    <p>Description: {{ bike.description }}</p>
+    <button (click)="onContact(bike._user)" *ngIf="bike._user != currentUser">Contact</button>
+    <button (click)="onDelete(bike._id)" *ngIf="bike._user == currentUser">Delete</button>
+  </div>
+</div>

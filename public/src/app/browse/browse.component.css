@@ -1,0 +1,31 @@
+.container {
+  width: 1206px;
+  margin:auto;
+}
+
+h3 {
+  text-align: center;
+}
+
+.browse {
+  border: 1px solid black;
+  width: 300px;
+  height: 500px;
+  margin: 20px;
+  padding: 30px;
+  text-align: center;
+  background-color: rgb(249, 212, 178);
+  display: inline-block;
+}
+
+img {
+  border: 1px solid black;
+}
+
+button {
+  width: 200px;
+  height: 25px;
+  background-color: red;
+  border: 1px solid black;
+  border-radius: 5px;
+}

@@ -1,0 +1,114 @@
+<h1>Bicycle Marketplace!</h1>
+<div class="bikeofday">
+  <!--Insert randomly generated bike-->
+</div>
+
+<div class="login">
+  <h3>Login</h3>
+  <table>
+    <form (submit)="onLogin()">
+      <tr>
+        <input
+          type="email"
+          name="logemail"
+          placeholder="Email"
+          required
+          [(ngModel)]="loginUser.email"
+          #email="ngModel"
+          >
+      </tr>
+      <tr>
+        <input
+          type="password"
+          name="logpassword"
+          placeholder="Password"
+          required
+          [(ngModel)]="loginUser.password"
+          #password="ngModel"
+          >
+      </tr>
+      <input type="submit" name="" value="Login">
+
+    </form>
+  </table>
+
+</div>
+
+
+
+
+<div class="register">
+  <h3>Register</h3>
+  <table>
+    <form #regForm="ngForm" (submit)="onReg()">
+      <tr>
+        <input
+          type="text"
+          name='first_name'
+          placeholder="First Name"
+          required
+          [(ngModel)]="user.first_name"
+          #first_name='ngModel'
+          >
+      </tr>
+      <tr>
+        <input
+          type="text"
+          name="last_name"
+          placeholder="Last Name"
+          required
+          [(ngModel)]="user.last_name"
+          #last_name='ngModel'
+          >
+      </tr>
+      <tr>
+        <input
+          type="email"
+          name="regemail"
+          placeholder="Email"
+          required
+          [(ngModel)]="user.email"
+          #email='ngModel'
+          pattern="^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$"
+          >
+      </tr>
+      <tr>
+        <input
+          type="password"
+          name="regpassword"
+          placeholder="Password"
+          required
+          minlength=8
+          [(ngModel)]="user.password"
+          #regpassword='ngModel'
+          >
+      </tr>
+      <tr>
+        <input
+          type="password"
+          name="confirm"
+          placeholder="Confirm Password"
+          required
+          minlength=8
+          [(ngModel)]="user.confirm"
+          #confirm='ngModel'
+          >
+      </tr>
+      <input
+        type="submit"
+        value="Login"
+        [disabled]="!regForm.form.valid"
+        >
+    </form>
+    <tr *ngIf="!email.valid && !email.pristine">
+      <p>Email is incorrect format!</p>
+    </tr>
+    <tr *ngIf="user.password.length < 8 && !regpassword.pristine">
+      <p>Password needs to be a minimum of 8 characters!</p>
+    </tr>
+    <tr *ngIf="user.confirm != user.password && !confirm.pristine">
+      <p>Password does not match!</p>
+    </tr>
+  </table>
+
+</div>
